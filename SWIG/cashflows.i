@@ -298,6 +298,36 @@ class CmsCouponPricer : public FloatingRateCouponPricer {
                                       Handle<SwaptionVolatilityStructure>());
 };
 
+%{
+using QuantLib::SubPeriodsCoupon;
+%}
+
+%shared_ptr(SubPeriodsCoupon)
+class SubPeriodsCoupon : public FloatingRateCoupon {
+    #if !defined(SWIGJAVA) && !defined(SWIGCSHARP)
+    %feature("kwargs") SubPeriodsCoupon;
+    #endif
+  public:
+    SubPeriodsCoupon(const Date& paymentDate, Real nominal,
+              const boost::shared_ptr<IborIndex>& index,
+              const Date& startDate, const Date& endDate,
+              Integer fixingDays,
+              const DayCounter& dayCounter,
+              Real gearing, Spread couponSpread, Spread rateSpread,
+              const Date& refPeriodStart = Date(),
+              const Date& refPeriodEnd = Date());
+    Spread rateSpread() const;
+    Real startTime() const;
+    Real endTime() const;
+    Size observations() const;
+
+    const std::vector<Date>& observationDates() const;
+    const std::vector<Real>& observationTimes() const;
+    const boost::shared_ptr<Schedule> observationsSchedule() const;
+
+    Real priceWithoutOptionality(const Handle<YieldTermStructure>& discountCurve) const;
+};
+
 class GFunctionFactory {
   private:
     GFunctionFactory();
