@@ -310,9 +310,9 @@ class SubPeriodsCoupon : public FloatingRateCoupon {
               const Date& startDate, const Date& endDate,
               Integer fixingDays,
               const DayCounter& dayCounter,
-              Real gearing, Spread couponSpread, Spread rateSpread,
-              const Date& refPeriodStart = Date(),
-              const Date& refPeriodEnd = Date());
+              Real gearing, Rate couponSpread, Rate rateSpread,
+              const Date& refPeriodStart,
+              const Date& refPeriodEnd);
     Spread rateSpread() const;
     Real startTime() const;
     Real endTime() const;
