@@ -1,4 +1,6 @@
 
+[![Build Status](https://travis-ci.org/achilleas-michos/QuantLib-SWIG.svg?branch=master)](https://travis-ci.org/achilleas-michos/QuantLib-SWIG)
+
 QuantLib-SWIG: language bindings for QuantLib
 =============================================
 
