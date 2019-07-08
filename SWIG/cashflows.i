@@ -304,9 +304,6 @@ using QuantLib::SubPeriodsCoupon;
 
 %shared_ptr(SubPeriodsCoupon)
 class SubPeriodsCoupon : public FloatingRateCoupon {
-    #if !defined(SWIGJAVA) && !defined(SWIGCSHARP)
-    %feature("kwargs") SubPeriodsCoupon;
-    #endif
   public:
     SubPeriodsCoupon(const Date& paymentDate, Real nominal,
               const boost::shared_ptr<IborIndex>& index,
