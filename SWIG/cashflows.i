@@ -324,8 +324,6 @@ class SubPeriodsCoupon : public FloatingRateCoupon {
     const std::vector<Date>& observationDates() const;
     const std::vector<Real>& observationTimes() const;
     const boost::shared_ptr<Schedule> observationsSchedule() const;
-
-    Real priceWithoutOptionality(const Handle<YieldTermStructure>& discountCurve) const;
 };
 
 class GFunctionFactory {
