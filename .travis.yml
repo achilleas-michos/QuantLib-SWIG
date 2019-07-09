@@ -30,6 +30,4 @@ deploy:
     secure: $git_key
   file: "QuantLib-Python-${TRAVIS_TAG}.tar.gz"
   skip_cleanup: true
-  on:
-    tags: true
 
